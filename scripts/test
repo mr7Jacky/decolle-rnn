@@ -1,0 +1,46 @@
+Layer: 0, Variance: 0.00735, Mean U: -0.0524, Mean S: 0.0477
+True False
+Layer: 1, Variance: 0.00675, Mean U: -0.0744, Mean S: 0.0774
+True False
+Layer: 2, Variance: 0.00781, Mean U: -0.1, Mean S: 0.475
+True False
+
+------Starting training with 3 DECOLLE layers-------
+LenetDECOLLERNN(
+  (LIF_layers): ModuleList(
+    (0): LIFLayer(
+      (base_layer): RNNCell(2048, 120)
+    )
+    (1): LIFLayer(
+      (base_layer): RNNCell(120, 84)
+    )
+    (2): LIFLayer(
+      (base_layer): RNNCell(84, 10)
+    )
+  )
+  (readout_layers): ModuleList(
+    (0): Linear(in_features=120, out_features=10, bias=True)
+    (1): Linear(in_features=84, out_features=10, bias=True)
+    (2): Identity()
+  )
+  (pool_layers): ModuleList(
+    (0): Sequential()
+    (1): Sequential()
+    (2): Sequential()
+  )
+  (dropout_layers): ModuleList(
+    (0): Dropout(p=0.5, inplace=False)
+    (1): Dropout(p=0.5, inplace=False)
+    (2): Dropout(p=0.5, inplace=False)
+  )
+)
+Changing learning rate from 0.001 to 0.001
+---------------Epoch 0-------------
+0.08430493273542601
+Error Rate L0 0.911 Error Rate L1 0.9 Error Rate L2 0.916
+Loss [ 18.079   15.2767 984.0142]
+Activity Rate [101.63415179660609, 148.00638210240177, 186.93459538379864]
+Changing learning rate from 0.001 to 0.001
+---------------Epoch 1-------------
+0.9115470852017937
+Error Rate L0 0.104 Error Rate L1 0.0833 Error Rate L2 0.0885
