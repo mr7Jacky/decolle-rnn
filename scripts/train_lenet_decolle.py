@@ -52,7 +52,8 @@ input_shape = data_batch.shape[-3:]
 if 'dropout' not in params.keys():
     params['dropout'] = [.5]
 ## Create Model, Optimizer and Loss
-net = LenetDECOLLERNN( out_channels=params['out_channels'],
+net = LenetDECOLLE( out_channels=params['out_channels'],
+# net = LenetDECOLLERNN( out_channels=params['out_channels'],
                     Nhid=params['Nhid'],
                     Mhid=params['Mhid'],
                     kernel_size=params['kernel_size'],
@@ -96,7 +97,7 @@ else:
 ##Initialize
 net.init_parameters(data_batch[:32])
 
-if not params["is_rnn"]:
+if net.__class__.__name__ == 'LenetDECOLLE':
     from decolle.init_functions import init_LSUV
     init_LSUV(net, data_batch[:32])
 else:
