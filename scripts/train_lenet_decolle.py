@@ -52,8 +52,8 @@ input_shape = data_batch.shape[-3:]
 if 'dropout' not in params.keys():
     params['dropout'] = [.5]
 ## Create Model, Optimizer and Loss
-net = LenetDECOLLE( out_channels=params['out_channels'],
-# net = LenetDECOLLERNN( out_channels=params['out_channels'],
+# net = LenetDECOLLE( out_channels=params['out_channels'],
+net = LenetDECOLLERNN( out_channels=params['out_channels'],
                     Nhid=params['Nhid'],
                     Mhid=params['Mhid'],
                     kernel_size=params['kernel_size'],
